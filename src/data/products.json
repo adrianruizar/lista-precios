@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Labial Mate",
+      "brand": "MAC",
+      "category": "Maquillaje",
+      "color": "Rojo",
+      "price": 25000,
+      "image": "https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Base Líquida",
+      "brand": "Maybelline",
+      "category": "Maquillaje",
+      "color": "Natural",
+      "price": 18000,
+      "image": "https://images.pexels.com/photos/2688991/pexels-photo-2688991.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Crema Hidratante",
+      "brand": "Nivea",
+      "category": "Skincare",
+      "color": "Blanco",
+      "price": 12000,
+      "image": "https://images.pexels.com/photos/3785147/pexels-photo-3785147.jpeg"
+    }
+  ]
+}
