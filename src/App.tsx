@@ -43,7 +43,7 @@ function App() {
           <div className="flex justify-between items-center">
             <h1 className="text-3xl font-bold text-gray-900">Lista de Precios</h1>
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-semibold text-pink-600">ROSADIOR JR</span>
+              <span className="text-2xl font-semibold text-red-600">ROSADIOR JR</span>
               <ShoppingBag className="h-8 w-8 text-pink-600" />
             </div>
           </div>
