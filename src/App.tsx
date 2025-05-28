@@ -13,7 +13,7 @@ function PrivateRoute({ children }: { children: React.ReactNode }) {
 function App() {
   return (
     <Routes>
-      <Route path="/\" element={<ProductList />} />
+      <Route path="/" element={<ProductList />} />
       <Route path="/login" element={<Login />} />
       <Route
         path="/admin"
@@ -26,5 +26,3 @@ function App() {
     </Routes>
   );
 }
-
-export default App;
