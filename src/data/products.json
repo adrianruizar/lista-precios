@@ -7,7 +7,7 @@
       "category": "Maquillaje",
       "color": "Rojo",
       "price": 25000,
-      "image": "https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg"
+      "image": "https://www.pexels.com/es-es/foto/par-de-zapatillas-azules-con-cordones-19090/"
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "category": "Maquillaje",
       "color": "Natural",
       "price": 18000,
-      "image": "https://images.pexels.com/photos/2688991/pexels-photo-2688991.jpeg"
+      "image": "https://www.pexels.com/es-es/foto/converse-all-star-26443457/"
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "category": "Skincare",
       "color": "Blanco",
       "price": 12000,
-      "image": "https://images.pexels.com/photos/3785147/pexels-photo-3785147.jpeg"
+      "image": "https://www.pexels.com/es-es/foto/par-de-zapatos-de-plataforma-de-tacon-abierto-de-cuero-beige-sobre-textil-blanco-1445696/"
     }
   ]
 }
