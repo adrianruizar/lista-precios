@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import { ShoppingBag } from 'lucide-react';
+import { ShoppingBag, Lock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import productsData from '../data/products.json';
 
 export default function ProductList() {
@@ -32,9 +33,16 @@ export default function ProductList() {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex justify-between items-center">
             <h1 className="text-3xl font-bold text-gray-900">Lista de Precios</h1>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-6">
               <span className="text-2xl font-semibold text-red-600">ROSADIOR JR</span>
               <ShoppingBag className="h-8 w-8 text-red-600" />
+              <Link
+                to="/login"
+                className="flex items-center gap-2 text-gray-600 hover:text-red-600"
+              >
+                <Lock className="h-5 w-5" />
+                <span>Admin</span>
+              </Link>
             </div>
           </div>
         </div>
