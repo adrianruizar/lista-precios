@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { Trash2, Edit, Plus, LogOut } from 'lucide-react';
 import productsData from '../data/products.json';
-import fs from 'fs/promises';
-import path from 'path';
 
 interface Product {
   id: number;
@@ -28,23 +26,9 @@ export default function AdminPanel() {
     navigate('/login');
   };
 
-  const saveToJson = async (updatedProducts: Product[]) => {
-    try {
-      const jsonData = JSON.stringify({ products: updatedProducts }, null, 2);
-      await fs.writeFile(
-        path.join(process.cwd(), 'src/data/products.json'),
-        jsonData,
-        'utf-8'
-      );
-    } catch (error) {
-      console.error('Error saving products:', error);
-    }
-  };
-
-  const handleDelete = async (id: number) => {
+  const handleDelete = (id: number) => {
     const updatedProducts = products.filter(product => product.id !== id);
     setProducts(updatedProducts);
-    await saveToJson(updatedProducts);
     setShowDeleteConfirm(null);
   };
 
@@ -52,12 +36,11 @@ export default function AdminPanel() {
     setEditingProduct(product);
   };
 
-  const handleSave = async (product: Product) => {
+  const handleSave = (product: Product) => {
     const updatedProducts = products.map(p => 
       p.id === product.id ? product : p
     );
     setProducts(updatedProducts);
-    await saveToJson(updatedProducts);
     setEditingProduct(null);
   };
 
