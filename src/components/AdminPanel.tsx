@@ -59,58 +59,58 @@ export default function AdminPanel() {
 
   return (
     <div className="min-h-screen bg-gray-50 p-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Panel Administrativo</h1>
-          <div className="flex gap-4">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
+          <h1 className="text-xl font-bold text-gray-900">Panel Administrativo</h1>
+          <div className="flex gap-2">
             <button
               onClick={handleAdd}
-              className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+              className="flex items-center gap-1 px-3 py-1.5 bg-green-600 text-white text-sm rounded hover:bg-green-700"
             >
-              <Plus className="h-5 w-5" />
-              Nuevo Producto
+              <Plus className="h-4 w-4" />
+              Nuevo
             </button>
             <button
               onClick={handleLogout}
-              className="flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700"
+              className="flex items-center gap-1 px-3 py-1.5 bg-gray-600 text-white text-sm rounded hover:bg-gray-700"
             >
-              <LogOut className="h-5 w-5" />
-              Cerrar Sesión
+              <LogOut className="h-4 w-4" />
+              Salir
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {products.map((product) => (
-            <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div key={product.id} className="bg-white rounded-lg shadow-sm overflow-hidden">
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-48 object-cover"
+                className="w-full h-32 object-cover"
               />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-gray-900">{product.name}</h3>
-                <p className="text-sm text-gray-600">{product.brand}</p>
-                <p className="text-sm text-gray-600">{product.category}</p>
-                <p className="text-sm text-gray-600">Color: {product.color}</p>
-                <div className="mt-2 bg-black rounded-lg py-2 px-3">
-                  <p className="text-xl font-bold text-white text-right">
+              <div className="p-2">
+                <h3 className="text-sm font-medium text-gray-900">{product.name}</h3>
+                <p className="text-xs text-gray-600">{product.brand}</p>
+                <p className="text-xs text-gray-600">{product.category}</p>
+                <p className="text-xs text-gray-600">Color: {product.color}</p>
+                <div className="mt-1 bg-black rounded py-1 px-2">
+                  <p className="text-sm font-bold text-white text-right">
                     ${product.price.toLocaleString()}
                   </p>
                 </div>
-                <div className="mt-4 flex justify-end gap-4">
+                <div className="mt-2 flex justify-end gap-2">
                   <button
                     onClick={() => handleEdit(product)}
-                    className="flex items-center gap-2 px-3 py-1.5 bg-blue-100 text-blue-600 rounded hover:bg-blue-200"
+                    className="flex items-center gap-1 px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded hover:bg-blue-100"
                   >
-                    <Edit className="h-4 w-4" />
+                    <Edit className="h-3 w-3" />
                     Editar
                   </button>
                   <button
                     onClick={() => setShowDeleteConfirm(product.id)}
-                    className="flex items-center gap-2 px-3 py-1.5 bg-red-100 text-red-600 rounded hover:bg-red-200"
+                    className="flex items-center gap-1 px-2 py-1 bg-red-50 text-red-600 text-xs rounded hover:bg-red-100"
                   >
-                    <Trash2 className="h-4 w-4" />
+                    <Trash2 className="h-3 w-3" />
                     Eliminar
                   </button>
                 </div>
@@ -123,18 +123,18 @@ export default function AdminPanel() {
       {/* Edit/Add Modal */}
       {editingProduct && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-          <div className="bg-white p-6 rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-            <h2 className="text-xl sm:text-2xl font-bold mb-6">
+          <div className="bg-white p-4 rounded-lg w-full max-w-md max-h-[90vh] overflow-y-auto">
+            <h2 className="text-lg font-bold mb-4">
               {editingProduct.id ? 'Editar Producto' : 'Nuevo Producto'}
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div>
                 <label className="block text-sm font-medium text-gray-700">Nombre</label>
                 <input
                   type="text"
                   value={editingProduct.name}
                   onChange={(e) => setEditingProduct({ ...editingProduct, name: e.target.value })}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                  className="mt-1 block w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
                 />
               </div>
               <div>
@@ -143,7 +143,7 @@ export default function AdminPanel() {
                   type="text"
                   value={editingProduct.brand}
                   onChange={(e) => setEditingProduct({ ...editingProduct, brand: e.target.value })}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                  className="mt-1 block w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
                 />
               </div>
               <div>
@@ -152,7 +152,7 @@ export default function AdminPanel() {
                   type="text"
                   value={editingProduct.category}
                   onChange={(e) => setEditingProduct({ ...editingProduct, category: e.target.value })}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                  className="mt-1 block w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
                 />
               </div>
               <div>
@@ -161,7 +161,7 @@ export default function AdminPanel() {
                   type="text"
                   value={editingProduct.color}
                   onChange={(e) => setEditingProduct({ ...editingProduct, color: e.target.value })}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                  className="mt-1 block w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
                 />
               </div>
               <div>
@@ -170,7 +170,7 @@ export default function AdminPanel() {
                   type="number"
                   value={editingProduct.price}
                   onChange={(e) => setEditingProduct({ ...editingProduct, price: Number(e.target.value) })}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                  className="mt-1 block w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
                 />
               </div>
               <div>
@@ -179,20 +179,20 @@ export default function AdminPanel() {
                   type="text"
                   value={editingProduct.image}
                   onChange={(e) => setEditingProduct({ ...editingProduct, image: e.target.value })}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                  className="mt-1 block w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
                 />
               </div>
             </div>
-            <div className="mt-6 flex justify-end gap-4">
+            <div className="mt-4 flex justify-end gap-2">
               <button
                 onClick={() => setEditingProduct(null)}
-                className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50"
+                className="px-3 py-1.5 text-sm border border-gray-300 rounded text-gray-700 hover:bg-gray-50"
               >
                 Cancelar
               </button>
               <button
                 onClick={() => handleSave(editingProduct)}
-                className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
+                className="px-3 py-1.5 text-sm bg-red-600 text-white rounded hover:bg-red-700"
               >
                 Guardar
               </button>
@@ -204,19 +204,19 @@ export default function AdminPanel() {
       {/* Delete Confirmation Modal */}
       {showDeleteConfirm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-          <div className="bg-white p-6 rounded-lg w-full max-w-md">
-            <h2 className="text-xl font-bold mb-4">Confirmar eliminación</h2>
-            <p className="mb-6">¿Está seguro que desea eliminar este producto?</p>
-            <div className="flex justify-end gap-4">
+          <div className="bg-white p-4 rounded-lg w-full max-w-sm">
+            <h2 className="text-lg font-bold mb-3">Confirmar eliminación</h2>
+            <p className="text-sm mb-4">¿Está seguro que desea eliminar este producto?</p>
+            <div className="flex justify-end gap-2">
               <button
                 onClick={() => setShowDeleteConfirm(null)}
-                className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50"
+                className="px-3 py-1.5 text-sm border border-gray-300 rounded text-gray-700 hover:bg-gray-50"
               >
                 Cancelar
               </button>
               <button
                 onClick={() => handleDelete(showDeleteConfirm)}
-                className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
+                className="px-3 py-1.5 text-sm bg-red-600 text-white rounded hover:bg-red-700"
               >
                 Eliminar
               </button>
