@@ -31,19 +31,16 @@ export default function ProductList() {
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex justify-between items-center">
-            <h1 className="text-3xl font-bold text-gray-900">Lista de Precios</h1>
-            <div className="flex items-center gap-6">
-              <span className="text-2xl font-semibold text-red-600">ROSADIOR JR</span>
-              <ShoppingBag className="h-8 w-8 text-red-600" />
-              <Link
-                to="/login"
-                className="flex items-center gap-2 text-gray-600 hover:text-red-600"
-              >
-                <Lock className="h-5 w-5" />
-                <span>Admin</span>
-              </Link>
-            </div>
+          <div className="flex flex-col items-center gap-4">
+            <span className="text-3xl font-semibold text-red-600">ROSADIOR JR</span>
+            <h1 className="text-2xl font-bold text-gray-900">Lista de Precios</h1>
+            <Link
+              to="/login"
+              className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg text-gray-600 hover:bg-gray-200"
+            >
+              <Lock className="h-5 w-5" />
+              <span>Admin</span>
+            </Link>
           </div>
         </div>
       </header>
@@ -58,9 +55,9 @@ export default function ProductList() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
 
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <select
-              className="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-200"
+              className="w-full sm:w-auto px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-200"
               value={selectedBrand}
               onChange={(e) => setSelectedBrand(e.target.value)}
             >
@@ -71,7 +68,7 @@ export default function ProductList() {
             </select>
 
             <select
-              className="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-200"
+              className="w-full sm:w-auto px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-200"
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
